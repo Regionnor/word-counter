@@ -1,0 +1,12 @@
+{
+    "title": "Wortzähler",
+    "totalChars": "Gesamte Zeichen:",
+    "chineseChars": "Chinesische Zeichen:",
+    "punctuationChars": "Satzzeichen:",
+    "lettersChars": "Buchstaben:",
+    "numbersChars": "Zahlen:",
+    "paragraphs": "Absätze:",
+    "readingTime": "Geschätzte Lesezeit:",
+    "speakingTime": "Geschätzte Sprechzeit:",
+    "clearText": "Text löschen"
+  }

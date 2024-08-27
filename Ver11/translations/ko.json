@@ -1,0 +1,12 @@
+{
+    "title": "단어 카운터",
+    "totalChars": "전체 문자:",
+    "chineseChars": "중국 문자:",
+    "punctuationChars": "구두점:",
+    "lettersChars": "알파벳:",
+    "numbersChars": "숫자:",
+    "paragraphs": "문단:",
+    "readingTime": "추정 읽는 시간:",
+    "speakingTime": "추정 말하는 시간:",
+    "clearText": "텍스트 지우기"
+  }

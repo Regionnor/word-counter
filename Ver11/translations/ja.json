@@ -1,0 +1,12 @@
+{
+    "title": "ワードカウンター",
+    "totalChars": "総文字数:",
+    "chineseChars": "漢字数:",
+    "punctuationChars": "標点記号数:",
+    "lettersChars": "アルファベット数:",
+    "numbersChars": "数字数:",
+    "paragraphs": "段落数:",
+    "readingTime": "推定読書時間:",
+    "speakingTime": "推定朗読時間:",
+    "clearText": "テキストをクリア"
+  }

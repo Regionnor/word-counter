@@ -1,0 +1,12 @@
+{
+    "title": "Compteur de mots",
+    "totalChars": "Caractères totaux :",
+    "chineseChars": "Caractères chinois :",
+    "punctuationChars": "Signes de ponctuation :",
+    "lettersChars": "Lettres :",
+    "numbersChars": "Nombres :",
+    "paragraphs": "Paragraphes :",
+    "readingTime": "Temps de lecture estimé :",
+    "speakingTime": "Temps de lecture à voix haute estimé :",
+    "clearText": "Effacer le texte"
+  }

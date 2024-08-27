@@ -1,0 +1,12 @@
+{
+    "title": "Word Counter",
+    "totalChars": "Total Characters:",
+    "chineseChars": "Chinese Characters:",
+    "punctuationChars": "Punctuation Marks:",
+    "lettersChars": "Letters:",
+    "numbersChars": "Numbers:",
+    "paragraphs": "Paragraphs:",
+    "readingTime": "Estimated Reading Time:",
+    "speakingTime": "Estimated Speaking Time:",
+    "clearText": "Clear Text"
+  }
