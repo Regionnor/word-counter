@@ -1,13 +1,14 @@
 [English Version](/README_EN.md)
 # 字数统计器
-本代码全都由html构成，统计速度极快
-本代码安全可靠，不依赖云端运行，不会在云端存储你的个人信息
+- 本代码全都由html构成，统计速度极快
+- 本代码安全可靠，不依赖云端运行，不会在云端存储你的个人信息
 
 # 在线体验
 ## Version 11（推荐）
 https://count.393837.xyz/Ver11/word-counter.html
 ## 旧版本
 进入下方链接选择想要的Version，点击其中的html文件运行
+
 https://count.393837.xyz/ 
 
 # 更新日志

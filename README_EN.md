@@ -1,12 +1,13 @@
 # Word Counter
-This code is entirely composed of HTML, providing extremely fast counting.
-The code is safe and reliable, does not depend on cloud operations, and does not store your personal information in the cloud.
+- This code is entirely composed of HTML, providing extremely fast counting.
+- The code is safe and reliable, does not depend on cloud operations, and does not store your personal information in the cloud.
 
 # Online Experience
 ## Version 11 (Recommended)
 https://count.393837.xyz/Ver11/word-counter.html
 ## Older Versions
 Visit the following link to select the desired version and run the HTML file:
+
 https://count.393837.xyz/
 
 # Changelog
