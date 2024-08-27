@@ -1,0 +1,9 @@
+{
+    "appTitle": "Подробный счётчик слов",
+    "totalChars": "Общее количество символов:",
+    "chineseChars": "Китайские символы:",
+    "punctuationChars": "Пунктуация:",
+    "lettersChars": "Буквы:",
+    "numbersChars": "Цифры:",
+    "clearButton": "Очистить содержимое"
+}

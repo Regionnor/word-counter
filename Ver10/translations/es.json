@@ -1,0 +1,12 @@
+{
+    "totalChars": "Total de caracteres:",
+    "chineseChars": "Caracteres chinos:",
+    "punctuationChars": "Signos de puntuación:",
+    "lettersChars": "Letras:",
+    "numbersChars": "Números:",
+    "paragraphs": "Párrafos:",
+    "readingTime": "Tiempo de lectura estimado:",
+    "speakingTime": "Tiempo de lectura en voz alta estimado:",
+    "clearText": "Limpiar texto",
+    "switchLanguage": "Cambiar idioma"
+  }

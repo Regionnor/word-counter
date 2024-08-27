@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>字数统计器</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #count {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>字数统计器</h1>
+    <textarea id="text" rows="10" cols="60" oninput="countCharacters(this)"></textarea>
+    <div id="count">字数：0</div>
+
+    <script>
+        function countCharacters(element) {
+            const text = element.value;
+            const count = text.length;
+            document.getElementById('count').textContent = `字数：${count}`;
+        }
+    </script>
+</body>
+</html>

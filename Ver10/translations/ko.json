@@ -1,0 +1,12 @@
+{
+    "totalChars": "총 문자 수:",
+    "chineseChars": "중문자 수:",
+    "punctuationChars": "구두점 수:",
+    "lettersChars": "알파벳 문자 수:",
+    "numbersChars": "숫자 수:",
+    "paragraphs": "문단 수:",
+    "readingTime": "예상 읽는 시간:",
+    "speakingTime": "예상 읽는 대화 시간:",
+    "clearText": "텍스트 지우기",
+    "switchLanguage": "언어 변경"
+  }

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>字数统计器</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            margin: 20px auto; /* Center horizontally */
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        textarea {
+            width: 100%;
+            height: 200px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: vertical;
+        }
+        .stats {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .stats p {
+            margin: 5px 0;
+        }
+        button {
+            display: block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        select {
+            display: block;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f4f4f4;
+            color: #333;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>字数统计器</h1>
+        <textarea id="text" oninput="updateStats()"></textarea>
+        <div class="stats">
+            <p><span id="totalChars">总字符数:</span><span id="total">0</span></p>
+            <p><span id="chineseChars">中文字符数:</span><span id="chinese">0</span></p>
+            <p><span id="punctuationChars">标点符号数:</span><span id="punctuation">0</span></p>
+            <p><span id="lettersChars">字母数:</span><span id="letters">0</span></p>
+            <p><span id="numbersChars">数字数:</span><span id="numbers">0</span></p>
+            <p><span id="paragraphs">段落数:</span><span id="paragraphCount">0</span></p>
+            <p><span id="readingTime">预计阅读时间:</span><span id="readingTimeValue"></span></p>
+            <p><span id="speakingTime">预计朗读时间:</span><span id="speakingTimeValue"></span></p>
+        </div>
+        <button onclick="clearText()">清空文本</button>
+        <select id="languageSelect" onchange="changeLanguage()">
+            <option value="zh_CN">简体中文 (中国)</option>
+            <option value="zh_TW">繁体中文 (台湾)</option>
+            <option value="zh_HK">繁体中文 (香港)</option>
+            <option value="en">English</option>
+            <option value="fr">Français</option>
+            <option value="de">Deutsch</option>
+            <option value="es">Español</option>
+            <option value="ru">Русский</option>
+            <option value="ko">한국어</option>
+            <option value="ja">日本語</option>
+        </select>
+    </div>
+
+    <script>
+        function updateStats() {
+            const text = document.getElementById('text').value;
+            const total = text.length;
+            const chinese = (text.match(/[一-龥]/g) || []).length;
+            const punctuation = (text.match(/[\u3002\uff1b\uff0c\uff1a\u201c\u201d\uff08\uff09\uff1f\uff01\uff08\uff09\u3001\uff1b\uff1a\uff0c\u300a\u300b\u3010\u3011\u3008\u3009\u3014\u3015\u3016\u3017\u3018\u3019\u300e\u300f\u300c\u300d\u3000\u301a\u301b\u2026\uff5e]/g) || []).length;
+            const letters = (text.match(/[a-zA-Z]/g) || []).length;
+            const numbers = (text.match(/\d/g) || []).length;
+            const paragraphs = (text.match(/\n/g) || []).length + 1; // Count lines and add 1 for the first paragraph
+            const readingTimeSeconds = Math.ceil(total / 200 * 60); // Assuming 200 words per minute, convert to seconds
+            const speakingTimeSeconds = Math.ceil(total / 125 * 60); // Assuming 125 words per minute, convert to seconds
+
+            document.getElementById('total').textContent = total;
+            document.getElementById('chinese').textContent = chinese;
+            document.getElementById('punctuation').textContent = punctuation;
+            document.getElementById('letters').textContent = letters;
+            document.getElementById('numbers').textContent = numbers;
+            document.getElementById('paragraphCount').textContent = paragraphs;
+
+            // Format the time in minutes and seconds
+            const readingTimeMinutes = Math.floor(readingTimeSeconds / 60);
+            const readingTimeRemainingSeconds = readingTimeSeconds % 60;
+            const speakingTimeMinutes = Math.floor(speakingTimeSeconds / 60);
+            const speakingTimeRemainingSeconds = speakingTimeSeconds % 60;
+
+            document.getElementById('readingTimeValue').textContent = formatTime(readingTimeMinutes, readingTimeRemainingSeconds);
+            document.getElementById('speakingTimeValue').textContent = formatTime(speakingTimeMinutes, speakingTimeRemainingSeconds);
+        }
+
+        // Helper function to format time
+        function formatTime(minutes, seconds) {
+            if (minutes === 0 && seconds === 0) {
+                return `${0} s`;
+            } else if (minutes === 0) {
+                return `${seconds} s`;
+            } else {
+                return `${minutes} m ${seconds.toString().padStart(2, '0')} s`;
+            }
+        }
+
+        function clearText() {
+            document.getElementById('text').value = '';
+            updateStats();
+        }
+
+        function changeLanguage() {
+            const selectedLanguage = document.getElementById('languageSelect').value;
+            loadTranslations(selectedLanguage);
+        }
+
+        function loadTranslations(languageCode) {
+            fetch(`translations/${languageCode}.json`)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('totalChars').textContent = data.totalChars;
+                    document.getElementById('chineseChars').textContent = data.chineseChars;
+                    document.getElementById('punctuationChars').textContent = data.punctuationChars;
+                    document.getElementById('lettersChars').textContent = data.lettersChars;
+                    document.getElementById('numbersChars').textContent = data.numbersChars;
+                    document.getElementById('paragraphs').textContent = data.paragraphs;
+                    document.getElementById('readingTime').textContent = data.readingTime;
+                    document.getElementById('speakingTime').textContent = data.speakingTime;
+                    document.getElementById('clearText').textContent = data.clearText;
+                    document.getElementById('languageSelect').options[0].text = data.switchLanguage;
+                })
+                .catch(error => console.error('Error loading translations:', error));
+        }
+
+        // Load default language (Simplified Chinese)
+        loadTranslations('zh_CN');
+    </script>
+</body>
+</html>

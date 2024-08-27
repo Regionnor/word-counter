@@ -1,0 +1,9 @@
+{
+    "appTitle": "Detaillierter Wortzähler",
+    "totalChars": "Gesamte Zeichen:",
+    "chineseChars": "Chinesische Zeichen:",
+    "punctuationChars": "Punktuierung:",
+    "lettersChars": "Buchstaben:",
+    "numbersChars": "Zahlen:",
+    "clearButton": "Inhalt löschen"
+}

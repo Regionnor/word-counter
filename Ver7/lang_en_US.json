@@ -1,0 +1,9 @@
+{
+    "appTitle": "Detailed Word Counter",
+    "totalChars": "Total Characters:",
+    "chineseChars": "Chinese Characters:",
+    "punctuationChars": "Punctuation:",
+    "lettersChars": "Letters:",
+    "numbersChars": "Numbers:",
+    "clearButton": "Clear Text"
+}

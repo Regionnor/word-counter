@@ -1,0 +1,12 @@
+{
+    "totalChars": "Общее количество символов:",
+    "chineseChars": "Китайские символы:",
+    "punctuationChars": "Знаки препинания:",
+    "lettersChars": "Буквы:",
+    "numbersChars": "Цифры:",
+    "paragraphs": "Абзацы:",
+    "readingTime": "Оценочное время чтения:",
+    "speakingTime": "Оценочное время чтения вслух:",
+    "clearText": "Очистить текст",
+    "switchLanguage": "Сменить язык"
+  }

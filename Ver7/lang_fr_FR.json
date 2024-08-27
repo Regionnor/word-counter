@@ -1,0 +1,9 @@
+{
+    "appTitle": "Compteur de mots détaillé",
+    "totalChars": "Caractères totaux :",
+    "chineseChars": "Caractères chinois :",
+    "punctuationChars": "Ponctuation :",
+    "lettersChars": "Lettres :",
+    "numbersChars": "Chiffres :",
+    "clearButton": "Effacer le contenu"
+}

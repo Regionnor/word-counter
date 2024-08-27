@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Counter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            margin: 20px auto; /* Center horizontally */
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        textarea {
+            width: 100%;
+            height: 200px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: vertical;
+        }
+        .stats {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .stats p {
+            margin: 5px 0;
+        }
+        button {
+            display: block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        select {
+            margin-top: 10px;
+            padding: 5px 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 data-title="Word Counter" id="appTitle">Word Counter</h1>
+        <textarea id="text" oninput="updateStats()"></textarea>
+        <div class="stats">
+            <p><span id="totalChars">Total Characters:</span><span id="total">0</span></p>
+            <p><span id="chineseChars">Chinese Characters:</span><span id="chinese">0</span></p>
+            <p><span id="punctuationChars">Punctuation:</span><span id="punctuation">0</span></p>
+            <p><span id="lettersChars">Letters:</span><span id="letters">0</span></p>
+            <p><span id="numbersChars">Numbers:</span><span id="numbers">0</span></p>
+            <p><span id="paragraphs">Paragraphs:</span><span id="paragraphCount">0</span></p>
+            <p><span id="readingTime">Estimated Reading Time:</span><span id="readingTimeValue">0</span> <span id="readingTimeUnit"></span></p>
+            <p><span id="speakingTime">Estimated Speaking Time:</span><span id="speakingTimeValue">0</span> <span id="speakingTimeUnit"></span></p>
+        </div>
+        <button onclick="clearText()">Clear Text</button>
+        <select id="languageSelect" onchange="changeLanguage()">
+            <option value="zh_CN">简体中文</option>
+            <option value="en_US">English</option>
+            <!-- Add more options for other languages -->
+        </select>
+    </div>
+
+    <script>
+        let currentLanguage = 'zh_CN'; // Current language
+
+        // Load the default language when the page loads
+        window.onload = function() {
+            loadLanguage("zh_CN");
+        };
+
+        function changeLanguage() {
+            const selectedLanguage = document.getElementById("languageSelect").value;
+            loadLanguage(selectedLanguage);
+        }
+
+        function loadLanguage(lang) {
+            fetch(`lang_${lang}.json`)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`Could not load language file for ${lang}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    currentLanguage = lang; // Update the current language
+                    document.getElementById("appTitle").innerText = data.appTitle;
+                    document.getElementById("totalChars").innerText = data.totalChars;
+                    document.getElementById("chineseChars").innerText = data.chineseChars;
+                    document.getElementById("punctuationChars").innerText = data.punctuationChars;
+                    document.getElementById("lettersChars").innerText = data.lettersChars;
+                    document.getElementById("numbersChars").innerText = data.numbersChars;
+                    document.getElementById("paragraphs").innerText = data.paragraphs;
+                    document.getElementById("readingTime").innerText = data.readingTime;
+                    document.getElementById("speakingTime").innerText = data.speakingTime;
+                    document.getElementById("readingTimeUnit").innerText = data.seconds; // Use the seconds key for the unit
+                    document.getElementById("speakingTimeUnit").innerText = data.seconds;
+                    document.querySelector("button").innerText = data.clearButton;
+                    updateStats(); // Update the stats to reflect the new language
+                })
+                .catch(error => {
+                    console.error("Error loading language file:", error);
+                    // Fallback to default language (zh_CN)
+                    loadLanguage("zh_CN");
+                });
+        }
+
+        function updateStats() {
+            const text = document.getElementById('text').value;
+            const total = text.length;
+            const chinese = (text.match(/[一-龥]/g) || []).length;
+            const punctuation = (text.match(/[\u3002\uff1b\uff0c\uff1a\u201c\u201d\uff08\uff09\uff1f\uff01\uff08\uff09\u3001\uff1b\uff1a\uff0c\u300a\u300b\u3010\u3011\u3008\u3009\u3014\u3015\u3016\u3017\u3018\u3019\u300e\u300f\u300c\u300d\u3000\u301a\u301b\u2026\uff5e]/g) || []).length;
+            const letters = (text.match(/[a-zA-Z]/g) || []).length;
+            const numbers = (text.match(/\d/g) || []).length;
+            const paragraphs = (text.match(/\n/g) || []).length + 1; // Count lines and add 1 for the first paragraph
+            const readingTimeSeconds = Math.ceil(total / 200 * 60); // Assuming 200 words per minute, convert to seconds
+            const speakingTimeSeconds = Math.ceil(total / 125 * 60); // Assuming 125 words per minute, convert to seconds
+
+            document.getElementById('total').textContent = total;
+            document.getElementById('chinese').textContent = chinese;
+            document.getElementById('punctuation').textContent = punctuation;
+            document.getElementById('letters').textContent = letters;
+            document.getElementById('numbers').textContent = numbers;
+            document.getElementById('paragraphCount').textContent = paragraphs;
+
+            // Format the time in minutes and seconds
+            const readingTimeMinutes = Math.floor(readingTimeSeconds / 60);
+            const readingTimeRemainingSeconds = readingTimeSeconds % 60;
+            const speakingTimeMinutes = Math.floor(speakingTimeSeconds / 60);
+            const speakingTimeRemainingSeconds = speakingTimeSeconds % 60;
+
+            document.getElementById('readingTimeValue').textContent = formatTime(readingTimeMinutes, readingTimeRemainingSeconds);
+            document.getElementById('speakingTimeValue').textContent = formatTime(speakingTimeMinutes, speakingTimeRemainingSeconds);
+
+            document.getElementById('readingTimeUnit').textContent = getUnit(currentLanguage, readingTimeMinutes > 0 ? 'minute' : 'second');
+            document.getElementById('speakingTimeUnit').textContent = getUnit(currentLanguage, speakingTimeMinutes > 0 ? 'minute' : 'second');
+        }
+
+        // Helper function to format time
+        function formatTime(minutes, seconds) {
+            if (minutes === 0) {
+                return seconds.toString();
+            } else {
+                return `${minutes} 分 ${seconds.toString().padStart(2, '0')} 秒`;
+            }
+        }
+
+        // Helper function to get the correct unit based on the current language
+        function getUnit(language, unitType) {
+            switch (language) {
+                case 'zh_CN':
+                    return unitType === 'minute' ? '' : '秒';
+                case 'en_US':
+                    return unitType === 'minute' ? '' : 'seconds';
+                // Add more cases for other languages as needed
+                default:
+                    return unitType === 'minute' ? '' : 'seconds';
+            }
+        }
+
+        function clearText() {
+            document.getElementById('text').value = '';
+            updateStats();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "totalChars": "总字符数:",
+  "chineseChars": "中文字符数:",
+  "punctuationChars": "标点符号数:",
+  "lettersChars": "字母数:",
+  "numbersChars": "数字数:",
+  "paragraphs": "段落数:",
+  "readingTime": "预计阅读时间:",
+  "speakingTime": "预计朗读时间:",
+  "clearText": "清空文本",
+  "switchLanguage": "切换语言"
+}

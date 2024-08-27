@@ -1,0 +1,14 @@
+{
+    "appTitle": "字数统计",
+    "totalChars": "总字符数:",
+    "chineseChars": "汉字:",
+    "punctuationChars": "标点符号:",
+    "lettersChars": "字母:",
+    "numbersChars": "数字:",
+    "paragraphs": "段落数:",
+    "readingTime": "预估阅读时间:",
+    "speakingTime": "预估说话时间:",
+    "minutes": "分钟",
+    "seconds": "秒",
+    "clearButton": "清除文本"
+}

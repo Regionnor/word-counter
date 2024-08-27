@@ -1,0 +1,14 @@
+{
+    "appTitle": "Word Counter",
+    "totalChars": "Total Characters:",
+    "chineseChars": "Chinese Characters:",
+    "punctuationChars": "Punctuation:",
+    "lettersChars": "Letters:",
+    "numbersChars": "Numbers:",
+    "paragraphs": "Paragraphs:",
+    "readingTime": "Estimated Reading Time:",
+    "speakingTime": "Estimated Speaking Time:",
+    "minutes": "minutes",
+    "seconds": "seconds",
+    "clearButton": "Clear Text"
+}

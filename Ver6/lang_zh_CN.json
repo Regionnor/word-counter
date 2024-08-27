@@ -1,0 +1,9 @@
+{
+    "appTitle": "详细字数统计器",
+    "totalChars": "总字数：",
+    "chineseChars": "汉字数：",
+    "punctuationChars": "标点数：",
+    "lettersChars": "字母数：",
+    "numbersChars": "数字数：",
+    "clearButton": "清空内容"
+  }
