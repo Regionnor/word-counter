@@ -36,4 +36,4 @@ https://count.393837.xyz/
 完成基本框架
 
 # 特别感谢
-特别感谢[通义千问](https://tongyi.aliyun.com/qianwen)提供的ai服务对本代码的修改和完善（这不是商业广告，就是想感谢一下）
+特别感谢[通义](https://tongyi.aliyun.com/qianwen)提供的ai服务对本代码的修改和完善（这不是商业广告，就是想感谢一下）
