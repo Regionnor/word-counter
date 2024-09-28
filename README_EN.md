@@ -14,7 +14,7 @@ https://count.393837.xyz/
 ## Version 11
 Fixed some known bugs and added a feature for titles to follow language switching.
 ## Version 10
-Re-merged the Chinese and English versions and added support for Traditional Chinese (Hong Kong), Traditional Chinese (Taiwan), French, German, Spanish, Korean, 和 Japanese.
+Re-merged the Chinese and English versions and added support for Traditional Chinese (Hong Kong), Traditional Chinese (Taiwan), French, German, Spanish, Korean, and Japanese.
 ## Version 9
 Fixed the display bug for dates in the English version and separated the Chinese and English versions.
 ## Version 8
