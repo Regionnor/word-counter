@@ -1,6 +1,6 @@
 # Word Counter
 - This code is entirely composed of HTML, providing extremely fast counting.
-- The code is safe and reliable, does not depend on cloud operations, and does not store your personal information in the cloud.
+- The code is safe and reliable, does not depend on cloud operations, 和 does not store your personal information in the cloud.
 
 # Online Experience
 ## Version 11 (Recommended)
@@ -35,4 +35,4 @@ Added features to display word count, character count, Chinese character count, 
 Completed the basic framework.
 
 # Special Thanks
-Special thanks to [通义千问](https://tongyi.aliyun.com/qianwen) for the AI services provided that helped modify and improve this code (this is not a commercial advertisement, just a way to express gratitude).
+Special thanks to [通义](https://tongyi.aliyun.com) for the AI services provided that helped modify and improve this code (this is not a commercial advertisement, just a way to express gratitude).
