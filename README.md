@@ -1,14 +1,17 @@
 [English Version](/README_EN.md)
+
 # 字数统计器
 - 本代码全都由html构成，统计速度极快
 - 本代码安全可靠，不依赖云端运行，不会在云端存储你的个人信息
+
+# 预览
+![screenshot](/screenshot/PixPin_2024-11-24_13-35-05.png)
 
 # 在线体验
 ## Version 11（推荐）
 https://count.393837.xyz/Ver11/word-counter.html
 ## 旧版本
 进入下方链接选择想要的Version，点击其中的html文件运行
-
 https://count.393837.xyz/ 
 
 # 更新日志
@@ -36,4 +39,4 @@ https://count.393837.xyz/
 完成基本框架
 
 # 特别感谢
-特别感谢[通义](https://tongyi.aliyun.com)提供的ai服务对本代码的修改和完善（这不是商业广告，就是想感谢一下）
+特别感谢[通义](https://tongyi.aliyun.com)提供的ai服务对本代码的修改和完善
