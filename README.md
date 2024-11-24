@@ -12,6 +12,7 @@
 https://count.393837.xyz/Ver11/word-counter.html
 ## 旧版本
 进入下方链接选择想要的Version，点击其中的html文件运行
+
 https://count.393837.xyz/ 
 
 # 更新日志

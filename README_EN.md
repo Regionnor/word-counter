@@ -10,6 +10,7 @@
 https://count.393837.xyz/Ver11/word-counter.html
 ## Older Versions
 Visit the following link to select the desired version and run the HTML file:
+
 https://count.393837.xyz/
 
 # Changelog
