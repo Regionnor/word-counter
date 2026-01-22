@@ -1,3 +1,13 @@
+<div align="center">
+
+[![GitHub Issues](https://img.shields.io/github/issues-search/Regionnor/word-counter?query=is%3Aopen&style=for-the-badge&color=00b4ab&logo=github&label=Issues)](https://github.com/Regionnor/word-counter/issues)
+[![Last Update](https://img.shields.io/github/last-commit/Regionnor/word-counter?style=for-the-badge&color=00b4ab&label=Last%20Update)](https://github.com/Regionnor/word-counter/commits/master)
+[![Downloads](https://img.shields.io/github/downloads/Regionnor/word-counter/total?style=for-the-badge&color=00b4ab&label=Total%20Downloads)](https://github.com/Regionnor/word-counter/releases)
+
+**Language** [ [简体中文](./README.md) | **✔English** ]
+
+</div>
+
 # Word Counter
 - This code is entirely composed of HTML, providing extremely fast counting.
 - The code is safe and reliable, does not depend on cloud operations, and does not store your personal information in the cloud.
