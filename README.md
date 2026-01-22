@@ -4,7 +4,7 @@
 [![上次更新](https://img.shields.io/github/last-commit/Regionnor/word-counter?style=for-the-badge&color=00b4ab&label=最后更新时间)](https://github.com/Regionnor/word-counter/commits/master)
 [![下载统计](https://img.shields.io/github/downloads/Regionnor/word-counter/total?style=for-the-badge&color=00b4ab&label=累计下载)](https://github.com/Regionnor/word-counter/releases)
 
-**语言选择** [ **✔简体中文** | [English](README_EN.md) ]
+**语言选择** [ **✔简体中文** | [English](./README_EN.md) ]
 
 </div>
 
