@@ -1,4 +1,12 @@
-[English Version](/README_EN.md)
+<div align="center">
+
+[![GitHub Issues](https://img.shields.io/github/issues-search/Regionnor/word-counter?query=is%3Aopen&style=for-the-badge&color=00b4ab&logo=github&label=问题)](https://github.com/Regionnor/word-counter/issues)
+[![上次更新](https://img.shields.io/github/last-commit/Regionnor/word-counter?style=for-the-badge&color=00b4ab&label=最后更新时间)](https://github.com/Regionnor/word-counter/commits/master)
+[![下载统计](https://img.shields.io/github/downloads/Regionnor/word-counter/total?style=for-the-badge&color=00b4ab&label=累计下载)](https://github.com/Regionnor/word-counter/releases)
+
+**语言选择** [ **✔简体中文** | [English](README_EN.md) ]
+
+</div>
 
 # 字数统计器
 - 本代码全都由html构成，统计速度极快
