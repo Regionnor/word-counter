@@ -13,7 +13,7 @@
 - The code is safe and reliable, does not depend on cloud operations, and does not store your personal information in the cloud.
 
 # Preview
-![screenshot](/screenshot/PixPin_2024-11-24_13-35-05.png)
+![screenshot](/screenshot/screenshot_2026_1_22%2023-58-33.png)
 
 # Online Experience
 ## Version 11 (Recommended)
